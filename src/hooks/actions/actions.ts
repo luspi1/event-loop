@@ -1,9 +1,11 @@
 import { bindActionCreators } from '@reduxjs/toolkit'
 import { useDispatch } from 'react-redux'
 import { breadCrumbsActions } from 'src/modules/bread-crumbs/store/bread-crumbs.slice'
+import { authActions } from 'src/store/auth/auth.slice'
 
 const actions = {
 	...breadCrumbsActions,
+	...authActions,
 }
 export const useActions = () => {
 	const dispatch = useDispatch()

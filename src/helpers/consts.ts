@@ -1,9 +1,9 @@
 export enum AppRoute {
 	Home = '/',
 	Users = 'users-list',
-	Objects = 'objects',
-	Projects = 'projects',
 	Events = 'events',
+	Top = 'top',
+	Auth = 'auth',
 }
 export enum ReducerPath {
 	Users = 'users/api',
@@ -11,6 +11,7 @@ export enum ReducerPath {
 
 export enum NameSpace {
 	BreadCrumbs = 'BREAD_CRUMBS',
+	Auth = 'AUTH',
 }
 
 export enum DisplayBreakpoints {

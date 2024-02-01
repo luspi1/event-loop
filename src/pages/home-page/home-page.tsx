@@ -2,19 +2,17 @@ import { type FC } from 'react'
 
 import { Helmet } from 'react-helmet-async'
 
-import { SliderSearch } from 'src/pages/home-page/components/slider-search/slider-search'
-
 import styles from './index.module.scss'
-import { FeedbackSection } from 'src/pages/home-page/components/feedback-section/feedback-section'
+import { HomeMenu } from 'src/pages/home-page/components/home-menu/home-menu'
+import { Container } from 'src/UI/Container/Container'
 
 export const HomePage: FC = () => {
 	return (
-		<div className={styles.homePage}>
+		<Container className={styles.homePage}>
 			<Helmet>
 				<title>Главная</title>
 			</Helmet>
-			<SliderSearch />
-			<FeedbackSection />
-		</div>
+			<HomeMenu />
+		</Container>
 	)
 }
