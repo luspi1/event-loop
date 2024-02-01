@@ -1,0 +1,16 @@
+.feedbackForm {
+  width: 48%;
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
+}
+
+.feedbackCheckbox {
+  margin-bottom: 20px;
+}
+
+.feedbackBtn {
+  color: #FFF;
+  font-size: 20px;
+  height: 50px;
+}

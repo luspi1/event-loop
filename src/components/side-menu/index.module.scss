@@ -1,0 +1,22 @@
+.sideMenu {
+  min-width: 205px;
+  width: 205px;
+
+  a {
+    color: #DE0008;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .activeLink {
+    color: #000000;
+  }
+}
+
+.menuItem {
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,38 @@
+$white: #ffffff;
+$black: #000000;
+
+
+@mixin montserrat-regular {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+
+@mixin opensans-medium{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+}
+
+@mixin opensans-bold {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+}
+
+@mixin ptsans-regular {
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 400;
+}
+
+@mixin ptsans-bold {
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 700;
+}
+
+@mixin ptsans-italic {
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+

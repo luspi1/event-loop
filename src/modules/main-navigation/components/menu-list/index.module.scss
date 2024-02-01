@@ -1,0 +1,45 @@
+@import "src/assets/styles/vars";
+
+.menuList {
+  display: flex;
+  gap: 29px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-right: 15px;
+  padding-bottom: 8px;
+  @media (max-width: 1280px) {
+    max-width: 50%;
+  }
+}
+
+.menuItem {
+  a {
+    @include ptsans-bold;
+    color: #015DB9;
+    text-transform: uppercase;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &._accent {
+    a {
+      color: #ffffff;
+      padding: 2px 12px;
+      background-color: #ED1C24;
+      border-radius: 8px;
+    }
+    .activeLink {
+      background-color: #015DB9;
+      color: #ffffff;
+      text-decoration: none;
+    }
+  }
+
+  .activeLink {
+    color: #000000;
+    text-decoration: none;
+  }
+}
+

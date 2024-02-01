@@ -1,0 +1,61 @@
+@import 'src/assets/styles/vars';
+
+.controlledInput {
+  @include ptsans-bold;
+  font-size: 16px;
+  padding: 13.5px 10px;
+  border: none;
+  width: 100%;
+  background-color: #fff;
+  color: #000000;
+  outline: none;
+
+  &::placeholder {
+    color: #CBCAD0;
+  }
+
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  p {
+    color: #9D9D9D;
+  }
+
+  span {
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+}
+
+.inputEl {
+  position: relative;
+
+  .warningMessage {
+    color: #F00000;
+    font-size: 14px;
+    line-height: 1;
+    padding-top: 5px;
+  }
+
+}
+
+.textareaEl {
+  width: 100%;
+  textarea {
+    height: 105px;
+  }
+}
+.textareaWrapper {
+  width: 100%;
+  display: block;
+}
+
+.noValid {
+  outline: 1px solid #F00000;
+}
