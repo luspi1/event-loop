@@ -10,7 +10,7 @@ type ContainerProps = PropsWithChildren<{
 }>
 
 const StyledContainer = styled.div<ContainerProps>`
-	max-width: ${({ width }) => width ?? '1250px'};
+	max-width: ${({ width }) => width ?? '1470px'};
 	padding: ${({ padding }) => padding ?? '0 15px'};
 	margin: ${({ $margin }) => $margin ?? '0 auto'};
 	position: ${({ $position }) => $position ?? 'relative'};

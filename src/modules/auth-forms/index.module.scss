@@ -1,28 +1,26 @@
-.authForm {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  width: 360px;
-
+.authForms {
+  width: 600px;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+  h1 {
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 65px;
+    font-weight: 700;
+  }
   form {
     display: flex;
-    flex-direction: column;
     gap: 10px;
+    flex-direction: column;
     width: 100%;
-
-    input {
-      width: 100%;
-      padding: 12px;
-      outline: none;
-      border-radius: 5px;
-      border: none;
-    }
   }
 }
 
+
 .formSwitch {
   display: flex;
+  justify-content: center;
   margin-bottom: 30px;
 
   button {
@@ -30,9 +28,11 @@
     padding: 11px 30px;
     border: 1px solid #ffffff;
     color: #ffffff;
+
     &._active {
-      background-color: #FFBA08;
-      border-color: #FFBA08;
+      background-color: #FAE100;
+      border-color: #FAE100;
+      color: #272626;
     }
   }
 }
