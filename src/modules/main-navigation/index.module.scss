@@ -20,15 +20,15 @@
   flex-wrap: wrap;
 }
 
-.authBtn {
+.authUser {
   display: flex;
   align-items: center;
   color: #FFFFFF;
   @include ptsans-bold;
   font-size: 20px;
   text-transform: capitalize;
-  padding-bottom: 8px;
   transition: all .3s;
+  cursor: pointer;
   svg {
     margin-right: 3px;
     transition: all .3s;
@@ -47,4 +47,14 @@
   }
 
 
+}
+
+.authBlock {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  button {
+    font-size: 20px;
+    color: #da1212;
+  }
 }

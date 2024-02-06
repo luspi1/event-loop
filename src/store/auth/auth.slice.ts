@@ -1,10 +1,11 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
-import { type User } from 'src/types/users'
 import { NameSpace } from 'src/helpers/consts'
-import { dropToken, saveToken } from 'src/helpers/token'
+
+import firebase from 'firebase/compat/app'
+import UserInfo = firebase.UserInfo
 
 type AuthSliceState = {
-	currentUser: User | null
+	currentUser: UserInfo | null
 }
 
 const initialState: AuthSliceState = {
@@ -15,16 +16,9 @@ export const authSlice = createSlice({
 	name: NameSpace.Auth,
 	initialState,
 	reducers: {
-		loginUser: (state, action: PayloadAction<User>) => {
+		loginUser: (state, action: PayloadAction<UserInfo | null>) => {
 			state.currentUser = action.payload
-			saveToken(action.payload.token)
-		},
-		checkLoginUser: (state, action: PayloadAction<User | undefined>) => {
-			state.currentUser = action.payload ?? null
-		},
-		logoutUser: (state) => {
-			state.currentUser = null
-			dropToken()
+			// saveToken(action.payload.token)
 		},
 	},
 })

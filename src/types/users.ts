@@ -1,4 +1,4 @@
-export type User = {
+export type UserType = {
 	id: number
 	age: string
 	email: string
@@ -6,15 +6,4 @@ export type User = {
 	lastname: string
 	password: string
 	token: string
-}
-
-export type authResponseData = {
-	error?: {
-		status: number
-		data: string
-	}
-	data?: {
-		accessToken: string
-		user: User
-	}
 }

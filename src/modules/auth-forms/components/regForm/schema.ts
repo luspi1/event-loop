@@ -1,16 +1,16 @@
 import * as yup from 'yup'
 
 export type RegInputs = {
-	name: string
+	displayName: string
 	email: string
 	password: string
 	confirmPassword: string
 }
 
-export const regInputNames = ['email', 'password', 'name']
+export const regInputNames = ['email', 'password', 'displayName']
 
 export const regSchema = yup.object({
-	name: yup
+	displayName: yup
 		.string()
 		.required('Введите имя')
 		.matches(/^[A-Za-zА-Яа-яz]+$/, 'Допускаются только буквы'),

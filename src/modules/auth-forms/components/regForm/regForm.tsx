@@ -22,7 +22,7 @@ export const RegForm: FC = () => {
 	return (
 		<FormProvider {...methods}>
 			<form onSubmit={methods.handleSubmit(onSubmit)} noValidate>
-				<ControlledInput name='name' placeholder='Введите ваше имя или никнейм' />
+				<ControlledInput name='displayName' placeholder='Введите ваше имя или никнейм' />
 				<ControlledInput name='email' placeholder='Введите email' type='email' />
 				<ControlledInput name='password' placeholder='Придумайте пароль' type='password' />
 				<ControlledInput name='confirmPassword' placeholder='Повторите пароль' type='password' />
