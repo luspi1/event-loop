@@ -1,14 +1,18 @@
 .loader{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   margin: 0;
   height: 100px;
-  width: 20%;
+  width: 60px;
   text-align: center;
   padding: 1em;
   display: inline-block;
   vertical-align: top;
   svg path,
   svg rect{
-    fill: #015DB9;
+    fill: #C6009B;
   }
 }
 

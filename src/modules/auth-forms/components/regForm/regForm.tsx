@@ -3,20 +3,27 @@ import { type FC } from 'react'
 import { FormProvider, type SubmitHandler, useForm } from 'react-hook-form'
 import { type RegInputs, regSchema } from 'src/modules/auth-forms/components/regForm/schema'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import { ControlledInput } from 'src/components/controlled-input/controlled-input'
 import { MainButton } from 'src/UI/MainButton/MainButton'
 import { auth } from 'src/helpers/firebaseConfig'
+import { useActions } from 'src/hooks/actions/actions'
+import { toast } from 'react-toastify'
 
 export const RegForm: FC = () => {
-	const methods = useForm<RegInputs>({ mode: 'onBlur', resolver: yupResolver(regSchema) })
-	const onSubmit: SubmitHandler<RegInputs> = async ({ email, password }) => {
+	const methods = useForm<RegInputs>({
+		mode: 'onBlur',
+		resolver: yupResolver(regSchema),
+	})
+
+	const { loginUser } = useActions()
+	const onSubmit: SubmitHandler<RegInputs> = async ({ email, password, displayName }) => {
 		try {
-			const userCredential = await createUserWithEmailAndPassword(auth, email, password)
-			const user = userCredential.user
-			console.log(user)
+			const { user } = await createUserWithEmailAndPassword(auth, email, password)
+			await updateProfile(user, { displayName })
+			loginUser(user)
 		} catch (error) {
-			console.log(error)
+			toast.warn('Пользователь уже существует')
 		}
 	}
 	return (

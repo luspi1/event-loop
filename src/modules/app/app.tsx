@@ -8,18 +8,16 @@ import { Layout } from 'src/modules/layout/layout'
 import { HomePage } from 'src/pages/home-page/home-page'
 import { NotFound } from 'src/pages/not-found/not-found'
 import { LoginPage } from 'src/pages/login-page/login-page'
-
-import { ProtectedLayout } from 'src/modules/protected-layout/protected-layout'
+import { useAuth } from 'src/hooks/auth/auth'
 
 export const App: FC = () => {
+	useAuth()
 	return (
 		<Routes>
-			<Route element={<ProtectedLayout />}>
-				<Route path={AppRoute.Home} element={<Layout />}>
-					<Route index element={<HomePage />} />
-				</Route>
-				<Route path={AppRoute.Auth} element={<LoginPage />} />
+			<Route path={AppRoute.Home} element={<Layout />}>
+				<Route index element={<HomePage />} />
 			</Route>
+			<Route path={AppRoute.Auth} element={<LoginPage />} />
 
 			<Route path='*' element={<NotFound />} />
 		</Routes>

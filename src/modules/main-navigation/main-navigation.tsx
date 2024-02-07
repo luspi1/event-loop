@@ -15,8 +15,8 @@ import styles from './index.module.scss'
 
 export const MainNavigation: FC = () => {
 	const currentUser = useAppSelector(getCurrentUser)
-	const handleLogoutClick = () => {
-		void signOut(auth).then((r) => console.log(r))
+	const handleLogoutClick = async () => {
+		await signOut(auth)
 	}
 
 	return (
@@ -29,7 +29,7 @@ export const MainNavigation: FC = () => {
 				<div className={styles.authBlock}>
 					<span className={styles.authUser}>
 						<AccountSvg />
-						{currentUser?.email ?? 'Аноним'}
+						{currentUser?.name ?? 'Аноним'}
 					</span>
 					<button onClick={handleLogoutClick} type='button'>
 						Выйти

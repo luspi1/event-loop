@@ -8,6 +8,7 @@ import styles from './index.module.scss'
 import { Container } from 'src/UI/Container/Container'
 import { AppRoute } from 'src/helpers/consts'
 import { Navigate } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 
 export const LoginPage: FC = () => {
 	const currentUser = useAppSelector(getCurrentUser)
@@ -15,6 +16,9 @@ export const LoginPage: FC = () => {
 	if (currentUser) return <Navigate to={AppRoute.Home} />
 	return (
 		<Container className={styles.loginPage}>
+			<Helmet>
+				<title>Авторизация</title>
+			</Helmet>
 			<AuthForms />
 		</Container>
 	)

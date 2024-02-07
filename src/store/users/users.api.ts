@@ -1,4 +1,4 @@
-import { type UserItem } from 'src/types/users'
+import { type UserType } from 'src/types/users'
 
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
@@ -11,7 +11,7 @@ export const usersApi = createApi({
 		baseUrl: BASE_URL,
 	}),
 	endpoints: (build) => ({
-		getAllUsers: build.query<UserItem[], string>({
+		getAllUsers: build.query<UserType[], string>({
 			query: (search) => ({
 				url: `users`,
 				params: {
@@ -19,7 +19,7 @@ export const usersApi = createApi({
 				},
 			}),
 		}),
-		getUserById: build.query<UserItem, string>({
+		getUserById: build.query<UserType, string>({
 			query: (userId) => ({
 				url: `users/${userId}`,
 			}),

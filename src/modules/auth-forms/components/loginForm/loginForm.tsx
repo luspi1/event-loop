@@ -1,5 +1,4 @@
 import { type FC } from 'react'
-import { type FirebaseErr } from 'src/types/firebase'
 
 import { type LoginInputs, loginSchema } from 'src/modules/auth-forms/components/loginForm/schema'
 
@@ -19,12 +18,10 @@ export const LoginForm: FC = () => {
 	const { loginUser } = useActions()
 	const onSubmit: SubmitHandler<LoginInputs> = async ({ email, password }) => {
 		try {
-			const userCredential = await signInWithEmailAndPassword(auth, email, password)
-			const user = userCredential.user
+			const { user } = await signInWithEmailAndPassword(auth, email, password)
 			loginUser(user)
 		} catch (err) {
-			const fireError: FirebaseErr = err as FirebaseErr
-			toast.warn(fireError.code)
+			toast.warn('Неверный логин или пароль')
 		}
 	}
 
