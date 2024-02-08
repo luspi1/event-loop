@@ -6,7 +6,8 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import { ControlledInput } from 'src/components/controlled-input/controlled-input'
 import { MainButton } from 'src/UI/MainButton/MainButton'
-import { auth } from 'src/helpers/firebaseConfig'
+import { auth, dbUsersReference } from 'src/helpers/firebaseConfig'
+import { set } from 'firebase/database'
 import { useActions } from 'src/hooks/actions/actions'
 import { toast } from 'react-toastify'
 
@@ -21,6 +22,10 @@ export const RegForm: FC = () => {
 		try {
 			const { user } = await createUserWithEmailAndPassword(auth, email, password)
 			await updateProfile(user, { displayName })
+			await set(dbUsersReference(user.uid), {
+				username: user.displayName,
+				email: user.email,
+			})
 			loginUser(user)
 		} catch (error) {
 			toast.warn('Пользователь уже существует')
