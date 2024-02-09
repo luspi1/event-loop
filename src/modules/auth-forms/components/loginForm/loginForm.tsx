@@ -12,6 +12,7 @@ import { MainButton } from 'src/UI/MainButton/MainButton'
 import { useActions } from 'src/hooks/actions/actions'
 import { auth } from 'src/helpers/firebaseConfig'
 
+import styles from './index.module.scss'
 export const LoginForm: FC = () => {
 	const methods = useForm<LoginInputs>({ mode: 'onBlur', resolver: yupResolver(loginSchema) })
 
@@ -33,6 +34,15 @@ export const LoginForm: FC = () => {
 				<MainButton as='button' type='submit'>
 					Войти
 				</MainButton>
+				<a
+					href='https://medastrum.ru/poleznaya-informatsiya/problemy_s_pamyatyu#3'
+					className={styles.forgotLink}
+					type='button'
+					rel='noreferrer'
+					target='_blank'
+				>
+					Забыли пароль?
+				</a>
 			</form>
 		</FormProvider>
 	)

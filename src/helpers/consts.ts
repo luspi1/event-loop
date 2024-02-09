@@ -1,8 +1,7 @@
 export enum AppRoute {
 	Home = '/',
-	Users = 'users-list',
 	Events = 'events',
-	Top = 'top',
+	Profile = 'profile',
 	Auth = 'auth',
 }
 export enum ReducerPath {

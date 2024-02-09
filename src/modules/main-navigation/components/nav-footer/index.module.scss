@@ -1,0 +1,41 @@
+@import "src/assets/styles/vars";
+
+.navFooter {
+  padding: 0 32px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  &._closed {
+    padding: 0;
+    align-items: center;
+    .logoWrapper {
+      width: 70%;
+    }
+  }
+}
+.logoutBtn {
+  margin-top: auto;
+
+  font-size: 20px;
+  color: #F01132;
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  svg {
+    margin-right: 10px;
+  }
+}
+
+
+.logoWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+
+.navFooterLink{
+  color: $purple;
+  text-decoration: underline;
+}

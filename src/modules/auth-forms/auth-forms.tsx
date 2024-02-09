@@ -22,7 +22,6 @@ export const AuthForms: FC = () => {
 
 	return (
 		<div className={styles.authForms}>
-			<h1>{isAuth ? 'Войти' : 'Зарегистрироваться'}</h1>
 			<div className={styles.formSwitch}>
 				<button
 					className={cx({ _active: isAuth })}

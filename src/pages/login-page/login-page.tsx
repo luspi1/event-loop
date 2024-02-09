@@ -9,16 +9,18 @@ import { Container } from 'src/UI/Container/Container'
 import { AppRoute } from 'src/helpers/consts'
 import { Navigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
+import { MainLogoSvg } from 'src/UI/icons/mainLogoSVG'
 
 export const LoginPage: FC = () => {
 	const currentUser = useAppSelector(getCurrentUser)
 
-	if (currentUser) return <Navigate to={AppRoute.Home} />
+	if (currentUser) return <Navigate to={`/${AppRoute.Events}`} />
 	return (
 		<Container className={styles.loginPage}>
 			<Helmet>
 				<title>Авторизация</title>
 			</Helmet>
+			<MainLogoSvg className={styles.authLogo} width='300' height='270' />
 			<AuthForms />
 		</Container>
 	)

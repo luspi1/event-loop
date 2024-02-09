@@ -1,0 +1,37 @@
+@import "src/assets/styles/vars";
+
+.linksList {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+
+  li {
+    a {
+      display: flex;
+      align-items: center;
+      color: #ffffff;
+      font-size: 20px;
+      height: 60px;
+      transition: all .3s;
+
+      &:hover {
+        color: #c3bebe;
+      }
+
+      svg {
+        width: 60px;
+      }
+    }
+    &:first-child {
+      svg {
+        margin-bottom: 6px;
+      }
+    }
+    .activeLink {
+      color: $yellow;
+      border-right: 4px solid $yellow;
+      pointer-events: none;
+    }
+  }
+}
+
