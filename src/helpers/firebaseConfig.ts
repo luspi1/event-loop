@@ -17,3 +17,4 @@ export const auth = getAuth(app)
 export const db = getDatabase(app)
 
 export const dbUsersReference = (userId: string) => ref(db, 'users/' + userId)
+export const allEventsReference = ref(db, 'allEvents/')

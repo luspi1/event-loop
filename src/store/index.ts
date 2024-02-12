@@ -6,11 +6,13 @@ import { usersApi } from 'src/store/users/users.api'
 
 import { NameSpace } from 'src/helpers/consts'
 import { authReducer } from 'src/store/auth/auth.slice'
+import { modalsReducer } from 'src/store/modals/modals.slice'
 
 export const store = configureStore({
 	reducer: {
 		[NameSpace.BreadCrumbs]: breadCrumbsReducer,
 		[NameSpace.Auth]: authReducer,
+		[NameSpace.Modals]: modalsReducer,
 		[usersApi.reducerPath]: usersApi.reducer,
 	},
 	middleware: (getDefaultMiddleware) =>

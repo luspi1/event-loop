@@ -11,6 +11,7 @@ export enum ReducerPath {
 export enum NameSpace {
 	BreadCrumbs = 'BREAD_CRUMBS',
 	Auth = 'AUTH',
+	Modals = 'MODALS',
 }
 
 export enum DisplayBreakpoints {

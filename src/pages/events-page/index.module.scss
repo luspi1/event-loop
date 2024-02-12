@@ -1,0 +1,25 @@
+.eventsPage {
+  section {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #D40F7D;
+    }
+  }
+
+  .sectionTitle {
+    font-size: 34px;
+    margin-bottom: 30px;
+  }
+
+  .newEvtBtn {
+    margin-top: 20px;
+
+    &:hover {
+      svg {
+        transition: all .5s;
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
