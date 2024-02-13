@@ -14,6 +14,7 @@ import { toast } from 'react-toastify'
 import { allEventsReference } from 'src/helpers/firebaseConfig'
 
 import styles from './index.module.scss'
+import { ControlledDateInput } from 'src/components/controlled-date-input/controlled-date-input'
 
 export const EventModal: FC = () => {
 	const { setEventModal } = useActions()
@@ -24,8 +25,14 @@ export const EventModal: FC = () => {
 		resolver: yupResolver(eventSchema),
 	})
 	const onSubmit: SubmitHandler<EventInputs> = async (data) => {
+		const formattedData = {
+			...data,
+			dateStart: data.dateStart.toISOString(),
+			dateEnd: data.dateEnd.toISOString(),
+		}
+
 		try {
-			await push(allEventsReference, data)
+			await push(allEventsReference, formattedData)
 			setEventModal({ isActive: false })
 		} catch (error) {
 			toast.warn((error as Error).message)
@@ -49,15 +56,24 @@ export const EventModal: FC = () => {
 					/>
 					<ControlledInput
 						className={styles.eventModalInput}
-						name='dateStart'
-						label='Дата проведения'
-						type='date'
-					/>
-					<ControlledInput
-						className={styles.eventModalInput}
 						name='description'
 						label='Описание события'
 						isTextarea
+					/>
+
+					<ControlledDateInput
+						className={styles.eventModalInput}
+						name='dateStart'
+						label='Дата и время начала события'
+						dateFormat='dd-MM-yyyy, HH:mm'
+						showTimeSelect
+					/>
+					<ControlledDateInput
+						className={styles.eventModalInput}
+						name='dateEnd'
+						label='Дата и время окончания события'
+						dateFormat='dd-MM-yyyy, HH:mm'
+						showTimeSelect
 					/>
 					<MainButton as='button' type='submit'>
 						Создать событие

@@ -101,17 +101,12 @@ textarea {
   padding: 0 15px;
 }
 
-.col-item {
-  width: 340px;
-  min-width: 340px;
-}
 
 ._hidden {
   display: none;
 }
 
-._rotate {
-  transform: rotate(180deg);
+
+.react-datepicker-wrapper {
+  width: 100%;
 }
-
-

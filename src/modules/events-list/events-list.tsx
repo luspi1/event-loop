@@ -1,18 +1,12 @@
 import { type FC } from 'react'
+import { type EventItem } from 'src/types/events'
+
+import { formatDate1 } from 'src/helpers/utils'
 
 import styles from './index.module.scss'
-import { formatDate2 } from 'src/helpers/utils'
-
-type Event = {
-	id: string
-	title: string
-	description: string
-	dateStart: Date
-	dateEnd: Date
-}
 
 type EventsListProps = {
-	events: Event[] | undefined
+	events: EventItem[] | undefined
 }
 export const EventsList: FC<EventsListProps> = ({ events }) => {
 	if (!events?.length) return <h3>Нет событий</h3>
@@ -25,7 +19,7 @@ export const EventsList: FC<EventsListProps> = ({ events }) => {
 					<p>{event.description}</p>
 					<h4>Даты проведения:</h4>
 					<p>
-						{formatDate2(event.dateStart)} - {formatDate2(event.dateEnd)}
+						{formatDate1(event.dateStart)} - {formatDate1(event.dateEnd)}
 					</p>
 				</li>
 			))}

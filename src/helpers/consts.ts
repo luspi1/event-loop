@@ -6,6 +6,7 @@ export enum AppRoute {
 }
 export enum ReducerPath {
 	Users = 'users/api',
+	Events = 'events/api',
 }
 
 export enum NameSpace {
@@ -21,5 +22,3 @@ export enum DisplayBreakpoints {
 	Xl = 1280,
 	Xxl = 1440,
 }
-
-export const BASE_URL = 'http://localhost:4001/api/v1'
