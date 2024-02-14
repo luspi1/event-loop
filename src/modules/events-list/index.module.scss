@@ -1,6 +1,51 @@
+@import "src/assets/styles/vars";
+
 .eventsList {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
   gap: 15px;
   margin-bottom: 28px;
+
+  li {
+    border-radius: 4px;
+    border: 1px solid #ffffff;
+
+  }
+
+
+  h4 {
+    font-size: 18px;
+    margin-bottom: 3px;
+  }
+}
+
+.eventHead {
+  margin-bottom: 5px;
+  padding: 10px 15px;
+  border-radius: 4px 4px 0 0;
+  background-color: $yellow;
+  h3 {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 2px;
+    color: $purple;
+  }
+
+  p {
+    color: #000000;
+  }
+}
+
+.eventBody {
+  padding: 10px 15px;
+  p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    svg {
+      height: 20px;
+      margin-right: 5px;
+    }
+  }
 }

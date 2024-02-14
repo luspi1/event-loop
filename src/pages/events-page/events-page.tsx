@@ -18,7 +18,8 @@ export const EventsPage: FC = () => {
 
 	useEffect(() => {
 		onValue(allEventsReference, (snapshot) => {
-			const data: Record<string, EventItem> = snapshot.val()
+			const data: Record<string, EventItem> | undefined = snapshot.val()
+			if (!data) return
 			setAllEvents([...formatFbData<EventItem>(data)])
 		})
 	}, [])

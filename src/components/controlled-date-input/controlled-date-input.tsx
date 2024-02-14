@@ -42,7 +42,7 @@ export const ControlledDateInput: FC<ControlledDateInputProps> = ({
 						<DatePicker
 							{...field}
 							locale='ru'
-							selected={field.value ? new Date(field.value as string) : new Date()}
+							selected={field.value ? new Date(field.value as string) : null}
 							onChange={(date) => field.onChange(date)}
 							dateFormat={dateFormat ?? 'dd-MM-yyyy'}
 							timeFormat={timeFormat ?? 'HH:mm'}

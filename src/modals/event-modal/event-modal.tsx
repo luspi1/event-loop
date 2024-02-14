@@ -15,10 +15,12 @@ import { allEventsReference } from 'src/helpers/firebaseConfig'
 
 import styles from './index.module.scss'
 import { ControlledDateInput } from 'src/components/controlled-date-input/controlled-date-input'
+import { getCurrentUser } from 'src/store/auth/auth.selectors'
 
 export const EventModal: FC = () => {
 	const { setEventModal } = useActions()
 	const { isActive } = useAppSelector(getEventModalState)
+	const currentUser = useAppSelector(getCurrentUser)
 
 	const methods = useForm<EventInputs>({
 		mode: 'onChange',
@@ -27,6 +29,13 @@ export const EventModal: FC = () => {
 	const onSubmit: SubmitHandler<EventInputs> = async (data) => {
 		const formattedData = {
 			...data,
+			location: {
+				title: data.location,
+			},
+			person: {
+				name: currentUser?.name,
+				id: currentUser?.id,
+			},
 			dateStart: data.dateStart.toISOString(),
 			dateEnd: data.dateEnd.toISOString(),
 		}
@@ -59,6 +68,11 @@ export const EventModal: FC = () => {
 						name='description'
 						label='Описание события'
 						isTextarea
+					/>
+					<ControlledInput
+						className={styles.eventModalInput}
+						name='location'
+						label='Место проведения'
 					/>
 
 					<ControlledDateInput
