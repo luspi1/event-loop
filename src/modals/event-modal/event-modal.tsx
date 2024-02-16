@@ -37,12 +37,12 @@ export const EventModal: FC = () => {
 				id: currentUser?.id,
 			},
 			dateStart: data.dateStart.toISOString(),
-			dateEnd: data.dateEnd.toISOString(),
 		}
 
 		try {
 			await push(allEventsReference, formattedData)
 			setEventModal({ isActive: false })
+			methods.reset()
 		} catch (error) {
 			toast.warn((error as Error).message)
 		}
@@ -79,13 +79,6 @@ export const EventModal: FC = () => {
 						className={styles.eventModalInput}
 						name='dateStart'
 						label='Дата и время начала события'
-						dateFormat='dd-MM-yyyy, HH:mm'
-						showTimeSelect
-					/>
-					<ControlledDateInput
-						className={styles.eventModalInput}
-						name='dateEnd'
-						label='Дата и время окончания события'
 						dateFormat='dd-MM-yyyy, HH:mm'
 						showTimeSelect
 					/>

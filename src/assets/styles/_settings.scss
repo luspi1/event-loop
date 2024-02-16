@@ -110,3 +110,9 @@ textarea {
 .react-datepicker-wrapper {
   width: 100%;
 }
+
+.trim-string {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

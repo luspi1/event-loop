@@ -19,11 +19,12 @@ export const EventsList: FC<EventsListProps> = ({ events }) => {
 			{events.map((event) => (
 				<li key={event.id}>
 					<div className={styles.eventHead}>
-						<h3>{event.title}</h3>
-						<p className={styles.eventDesc}>{event.description}</p>
+						<h3 className='trim-string'>{event.title}</h3>
 					</div>
 
 					<div className={styles.eventBody}>
+						<p className={styles.eventDesc}>{event.description}</p>
+
 						<p>
 							<PersonIconSvg />
 							{event.person.name}
@@ -34,7 +35,7 @@ export const EventsList: FC<EventsListProps> = ({ events }) => {
 						</p>
 						<p>
 							<TimeIconSvg />
-							{formatDate1(event.dateStart)} -<br /> {formatDate1(event.dateEnd)}
+							{formatDate1(event.dateStart)}
 						</p>
 					</div>
 				</li>

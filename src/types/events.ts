@@ -3,7 +3,6 @@ export type EventItem = {
 	title: string
 	description: string
 	dateStart: string
-	dateEnd: string
 	person: {
 		name: string
 		id: string
