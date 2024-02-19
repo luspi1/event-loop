@@ -13,9 +13,11 @@ import { push } from 'firebase/database'
 import { toast } from 'react-toastify'
 import { allEventsReference } from 'src/helpers/firebaseConfig'
 
-import styles from './index.module.scss'
 import { ControlledDateInput } from 'src/components/controlled-date-input/controlled-date-input'
 import { getCurrentUser } from 'src/store/auth/auth.selectors'
+
+import styles from './index.module.scss'
+import { ControlledSuggestAddress } from 'src/components/controlled-suggest-address/controlled-suggest-address'
 
 export const EventModal: FC = () => {
 	const { setEventModal } = useActions()
@@ -69,11 +71,8 @@ export const EventModal: FC = () => {
 						label='Описание события'
 						isTextarea
 					/>
-					<ControlledInput
-						className={styles.eventModalInput}
-						name='location'
-						label='Место проведения'
-					/>
+
+					<ControlledSuggestAddress name='location' label='Место события' />
 
 					<ControlledDateInput
 						className={styles.eventModalInput}
@@ -82,6 +81,7 @@ export const EventModal: FC = () => {
 						dateFormat='dd-MM-yyyy, HH:mm'
 						showTimeSelect
 					/>
+
 					<MainButton as='button' type='submit'>
 						Создать событие
 					</MainButton>

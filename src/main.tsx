@@ -11,6 +11,8 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.min.css'
 import 'swiper/swiper-bundle.css'
 import 'react-datepicker/dist/react-datepicker.css'
+import 'react-dadata/dist/react-dadata.css'
+
 import './index.scss'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

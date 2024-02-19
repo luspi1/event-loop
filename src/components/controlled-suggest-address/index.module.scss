@@ -1,0 +1,41 @@
+@import 'src/assets/styles/vars';
+
+
+.suggestInput {
+  position: relative;
+  width: 100%;
+  input {
+    @include ptsans-regular;
+    font-size: 16px;
+    padding: 0 8px;
+    height: 42px;
+
+    border: 1px solid $dark;
+    border-radius: 3px;
+    width: 100%;
+    background-color: #fff;
+    color: #000000;
+    outline: none;
+
+
+    &::placeholder {
+      color: #CBCAD0;
+    }
+  }
+
+  label {
+    position: relative;
+
+    p {
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    span {
+      margin-left: 10px;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+  }
+}

@@ -23,6 +23,6 @@ export const eventSchema: ObjectSchema<EventInputs> = yup.object({
 		.string()
 		.required('Введите место')
 		.min(6, 'Минимум 6 символов')
-		.max(200, 'Максимум 200 символов'),
+		.max(200, 'Максимум 100 символов'),
 	dateStart: yup.date().typeError('Неверный формат даты').required('Введите дату'),
 })
