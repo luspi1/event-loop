@@ -7,9 +7,10 @@ import { PlusIconSvg } from 'src/UI/icons/plusIconSVG'
 import { EventModal } from 'src/modals/event-modal/event-modal'
 import { useActions } from 'src/hooks/actions/actions'
 import { onValue } from 'firebase/database'
-import styles from './index.module.scss'
 import { allEventsReference } from 'src/helpers/firebaseConfig'
 import { formatFbData } from 'src/helpers/utils'
+
+import styles from './index.module.scss'
 
 export const EventsPage: FC = () => {
 	const { setEventModal } = useActions()

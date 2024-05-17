@@ -31,7 +31,7 @@ export const EventsList: FC<EventsListProps> = ({ events }) => {
 						</p>
 						<p>
 							<LocationIconSvg />
-							{event.location.title}
+							{event.location?.title}
 						</p>
 						<p>
 							<TimeIconSvg />

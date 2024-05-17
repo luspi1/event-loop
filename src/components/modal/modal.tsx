@@ -31,8 +31,8 @@ export const Modal: FC<ModalProps> = ({ active, setActive, children, className, 
 	}
 
 	return createPortal(
-		<div className={cn(styles.modal, { [styles.active]: active })} onClick={handleCloseModal}>
-			<div className={cn(styles.modalContent, className)} onClick={(e) => e.stopPropagation()}>
+		<div className={cn(styles.modal, { [styles.active]: active })} onMouseDown={handleCloseModal}>
+			<div className={cn(styles.modalContent, className)} onMouseDown={(e) => e.stopPropagation()}>
 				<button className={styles.closeBtn} type='button' onClick={handleCloseModal}>
 					<CloseSvg />
 				</button>
